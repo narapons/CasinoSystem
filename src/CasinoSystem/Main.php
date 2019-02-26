@@ -42,7 +42,7 @@ class Main extends PluginBase implements Listener{
                         if($args[0] >= 0){//掛け金が数字だった場合
                             if($PlayerHasMoney !>= $args[0]){//所持金が掛け金以上ではない場合
                                 $sender->sendMessage(">>§c所持金が不足しています");
-                                $sender->sendMesaage(">>§c掛け金を所持金以下にしてください");
+                                $sender->sendMessage(">>§c掛け金を所持金以下にしてください");
                             }else{//所持金が掛け金以上の場合
                                 $economy->reduceMoney($name, $args[0]);//掛け金を所持金から減らす
                                 $r = rand(0, 1);//変数に関数randを使い代入(確率設定)
