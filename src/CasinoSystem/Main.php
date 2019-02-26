@@ -51,7 +51,7 @@ class Main extends PluginBase implements Listener{
                                     $sender->sendMessage($this->Config->get("Message1"));
                                     $economy->addMoney($name, $args[0] * 2); //当たりだった場合
                                 }else{//確率設定(？)
-                                    $sender->sendMessage($this-:Config->get("Message2"));
+                                    $sender->sendMessage($this->Config->get("Message2"));
                                     //ハズレだった場合
                                 }
                             }
