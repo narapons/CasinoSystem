@@ -57,7 +57,7 @@ class Main extends PluginBase implements Listener{
                             }
                         }else{//掛け金が数字で0以上ではない場合
                             $sender->sendMessage(">>§c掛け金として0以上の数字を入力してください");
-                            $sender->sendMesaage("use: /casino <掛け金>");
+                            $sender->sendMessage("use: /casino <掛け金>");
                         }
                     }
                 }
