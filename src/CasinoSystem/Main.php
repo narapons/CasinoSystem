@@ -7,6 +7,7 @@ use pocketmine\Plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat;//Config関連
 use pocketmine\utils\Config;//Config関連
+use onebone\economyapi\EconomyAPI;//EconomyAPI
 use pocketmine\command\Command;//以下コマンド関連
 use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecuter;
