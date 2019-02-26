@@ -41,7 +41,7 @@ class Main extends PluginBase implements Listener{
                         $sender->sendMessage("use: /casino <掛け金>");
                     }else{//掛け金が入力されてた場合の処理
                         if($args[0] >= 0){//掛け金が数字だった場合
-                            if($PlayerHasMoney !>= $args[0]){//所持金が掛け金以上ではない場合
+                            if(!$PlayerHasMoney >= $args[0]){//所持金が掛け金以上ではない場合
                                 $sender->sendMessage(">>§c所持金が不足しています");
                                 $sender->sendMessage(">>§c掛け金を所持金以下にしてください");
                             }else{//所持金が掛け金以上の場合
