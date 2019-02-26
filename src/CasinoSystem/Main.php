@@ -40,7 +40,7 @@ class Main extends PluginBase implements Listener{
                         $sender->sendMessage(">>§c掛け金を入力してください");
                         $sender->sendMessage("use: /casino <掛け金>");
                     }else{//掛け金が入力されてた場合の処理
-                        if(is_numeric($args[0]) && $args[0] >= 0){//掛け金が数字で0以上だった場合
+                        if(is_numeric($args[0]) || $args[0] >= 0){//掛け金が数字or0以上だった場合
                             if($PlayerHasMoney <= $args[0]){//所持金が掛け金以上ではない場合
                                 $sender->sendMessage(">>§c所持金が不足しています");
                                 $sender->sendMessage(">>§c掛け金を所持金以下にしてください");
@@ -55,7 +55,7 @@ class Main extends PluginBase implements Listener{
                                     //ハズレだった場合
                                 }
                             }
-                        }else{//掛け金が数字で0以上ではない場合
+                        }else{//掛け金が数字or0以上ではない場合
                             $sender->sendMessage(">>§c掛け金として0以上の数字を入力してください");
                             $sender->sendMessage("use: /casino <掛け金>");
                         }
