@@ -1,0 +1,12 @@
+---
+name: CasinoSystem
+main: CasinoSystem\Main
+version: 1.0.0
+api: 3.0.0
+author: narapon
+load: POSTWORLD
+commands:
+  casino:
+    description: カジノ
+    usage: /casino <掛け金>
+...
