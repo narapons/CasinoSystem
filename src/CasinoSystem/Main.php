@@ -20,7 +20,8 @@ class Main extends PluginBase implements Listener{
 	$this->getServer()->getPluginManager()->registerEvents($this, $this);
 	$this->Config = new Config($this->getDataFolder() . "Config.yml", Config::YAML, array(
 	'Message1' => '[Casino] §e当たりです！',
-	'Message2' => '[Casino] §eハズレです！'
+	'Message2' => '[Casino] §eハズレです！',
+	'確率' => '2'
 	));//コンフィグの作成
 	}
 
@@ -46,11 +47,43 @@ class Main extends PluginBase implements Listener{
                                 $sender->sendMessage(">>§c掛け金を所持金以下にしてください");
                             }else{//所持金が掛け金以上の場合
                                 $economy->reduceMoney($name, $args[0]);//掛け金を所持金から減らす
-                                $r = rand(0, 1);//変数に関数randを使い代入(確率設定)
-                                if($r == 0){//確率設定(？)
+                                $r = rand(1, this->Config->get("確率"));//変数に関数randを使い代入(確率設定)
+                                if($r == 1){//確率設定
                                     $sender->sendMessage($this->Config->get("Message1"));
                                     $economy->addMoney($name, $args[0] * 2); //当たりだった場合
-                                }else{//確率設定(？)
+                                if($r == 2){//確率設定
+                                    $sender->sendMessage($this->Config->get("Message2"));
+                                    //ハズレだった場合
+                                }
+				if($r == 3){//確率設定
+                                    $sender->sendMessage($this->Config->get("Message2"));
+                                    //ハズレだった場合
+                                }
+				if($r == 4){//確率設定
+                                    $sender->sendMessage($this->Config->get("Message2"));
+                                    //ハズレだった場合
+                                }
+				if($r == 5{//確率設定
+                                    $sender->sendMessage($this->Config->get("Message2"));
+                                    //ハズレだった場合
+                                }
+				if($r == 6){//確率設定
+                                    $sender->sendMessage($this->Config->get("Message2"));
+                                    //ハズレだった場合
+                                }
+				if($r == 7){//確率設定
+                                    $sender->sendMessage($this->Config->get("Message2"));
+                                    //ハズレだった場合
+                                }
+				if($r == 8){//確率設定
+                                    $sender->sendMessage($this->Config->get("Message2"));
+                                    //ハズレだった場合
+                                }
+				if($r == 9){//確率設定
+                                    $sender->sendMessage($this->Config->get("Message2"));
+                                    //ハズレだった場合
+                                }
+				if($r == 10){//確率設定
                                     $sender->sendMessage($this->Config->get("Message2"));
                                     //ハズレだった場合
                                 }
@@ -60,9 +93,28 @@ class Main extends PluginBase implements Listener{
                             $sender->sendMessage("use: /casino <掛け金>");
                         }
                     }
-                }
-            }
-        }
+		}
+		break;
+			    
+		case "setca":
+		if(!$sender->isOp()){
+			$sender->sendMessage("§cコマンドを実行する権限がありません");
+		}else{
+			if(!isset($args[0])){
+				$sender->sendMessage("§c>>設定する確率を入力してください");
+				$sender->sendMessage("use: /setca <確率>");
+			}else{
+				if(2<=$args[0]<=10){
+					$this->Config->set('確率',$args[0]);
+					$this->Config->save();
+					$sender->sendMessage("確率を{$args[0]}に設定しました");
+				}else{
+					$sender->sendMessage("§c>>0以上10以下の確率を入力してください");
+				}
+			}
+		}
+		break;
+	}
 	return true;
     }
 }
