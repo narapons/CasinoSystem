@@ -9,4 +9,7 @@ commands:
   casino:
     description: カジノ
     usage: /casino <掛け金>
+  setca:
+    description: カジノ設定
+    usage: /setca <確率>
 ...
