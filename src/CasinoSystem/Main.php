@@ -105,7 +105,7 @@ class Main extends PluginBase implements Listener{
 				$sender->sendMessage("§c>>設定する確率を入力してください");
 				$sender->sendMessage("use: /setca <確率>");
 			}else{
-				if(2<=$args[0]<=10){
+				if(2<=$args[0] && $args[0]<=10){
 					$this->Config->set('確率',$args[0]);
 					$this->Config->save();
 					$sender->sendMessage("確率を{$args[0]}に設定しました");
