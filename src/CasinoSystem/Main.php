@@ -63,7 +63,7 @@ class Main extends PluginBase implements Listener{
                                     $sender->sendMessage($this->Config->get("Message2"));
                                     //ハズレだった場合
                                 }
-				if($r == 5{//確率設定
+				if($r == 5){//確率設定
                                     $sender->sendMessage($this->Config->get("Message2"));
                                     //ハズレだった場合
                                 }
