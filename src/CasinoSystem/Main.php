@@ -47,7 +47,7 @@ class Main extends PluginBase implements Listener{
                                 $sender->sendMessage(">>§c掛け金を所持金以下にしてください");
                             }else{//所持金が掛け金以上の場合
                                 $economy->reduceMoney($name, $args[0]);//掛け金を所持金から減らす
-                                $r = rand(1, this->Config->get("確率"));//変数に関数randを使い代入(確率設定)
+                                $r = rand(1, $this->Config->get("確率"));//変数に関数randを使い代入(確率設定)
                                 if($r == 1){//確率設定
                                     $sender->sendMessage($this->Config->get("Message1"));
                                     $economy->addMoney($name, $args[0] * 2); //当たりだった場合
